@@ -1,0 +1,45 @@
+<div>
+
+    <section class="py-6 bg-gray-100 text-gray-800">
+        <div class="container p-4 mx-auto space-y-16 sm:p-10">
+            <div class="space-y-4">
+                <h3 class="text-2xl font-bold leadi sm:text-5xl">Meet our Mentors</h3>
+                <p class="max-w-2xl text-gray-600">At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur
+                    quam natus quis nihil quod, hic explicabo doloribus magnam neque, exercitationem eius sunt!</p>
+            </div>
+
+            <div class="grid w-full grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="space-y-4" *ngFor="let mentor of mentors">
+                    <img alt="" class="object-cover h-56 mx-auto mb-4 bg-center rounded-sm bg-gray-500"
+                        src="{{ mentor.avatar }}">
+                    <div class="flex flex-col items-center">
+                        <h4 class="text-xl font-semibold">{{ mentor.name }}</h4>
+                        <p class="text-sm text-gray-600">{{ mentor.email }}</p>
+                        <div class="flex mt-2 space-x-2">
+                            <a rel="noopener noreferrer" href="#" title="Twitter" class="text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor"
+                                    class="w-4 h-4">
+                                </svg>
+                            </a>
+                            <a rel="noopener noreferrer" href="#" title="LinkedIn" class="text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32"
+                                    class="w-4 h-4">
+
+                                </svg>
+                            </a>
+                            <a rel="noopener noreferrer" href="#" title="GitHub" class="text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32"
+                                    class="w-4 h-4">
+
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div *ngIf="mentors.length == 0">Loading...</div>
+        </div>
+    </section>
+
+</div>

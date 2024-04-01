@@ -1,0 +1,105 @@
+<div>
+    <div style="display: flex; flex-wrap: wrap; padding-top: 5px;">
+        <div *ngFor="let activity of Activity" style="margin-right: 10px;">
+            <button type="button" class="px-8 py-3 font-semibold  bg-violet-800 text-gray-100"
+                (click)="GenerateRank(activity._id)">{{ activity.todo_name }}</button>
+        </div>
+        <div style="margin-right: 10px;">
+            <button type="button" class="px-8 py-3 font-semibold  bg-pink-400 text-gray-100" (click)="FinalRank()">Final
+                Rank</button>
+        </div>
+
+    </div>
+
+
+
+    <div *ngIf="!RankList">
+
+        <div *ngIf="!Rankvisibility">
+            <div
+                class="flex items-center justify-between m-20 w-1/3 p-6 border-l-8 sm:py-8 border-violet-600 bg-gray-50 text-gray-800">
+                <span>Not yet time for Rank List...</span>
+            </div>
+        </div>
+        <div *ngIf="Rankvisibility">
+            <!-- <div>
+                <button type="button" class="px-8 py-3 font-semibold rounded-full bg-violet-800 text-gray-100"
+                    (click)="Generate()">Generate</button>
+            </div> -->
+        </div>
+    </div>
+    <div>
+        <!-- <div id="names-list">
+            <a *ngFor="let activity of Activity" [href]="'/profile?id=' + activity._id">{{ activity.todo_name }}</a><br><br>
+        </div>
+         -->
+        <!-- <div *ngFor="let activity of Activity" >
+            <button type="button" class="px-8 py-3 font-semibold rounded-full bg-violet-800 text-gray-100"
+                (click)="GenerateRank(activity._id)">{{ activity.todo_name }}</button>
+        </div>
+    -->
+
+
+    </div>
+
+
+    <div *ngIf="RankList" class="m-5">
+
+        <div class="w-2/3">
+            <div class="container p-2 mx-auto rounded-md sm:p-4 text-gray-800 bg-gray-50">
+                <h2 class="mb-3 text-2xl font-semibold leading-tight">Rank List</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-xs">
+                        <thead class="rounded-t-lg bg-gray-300">
+                            <tr class="text-right">
+                                <th title="Ranking" class="p-3 text-left">Rank</th>
+                                <th title=" Name" class="p-3 text-left">Name</th>
+                                <th title="Mark" class="p-3">Marks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor="let rank of Rank"
+                                class="text-right border-b border-opacity-20 border-gray-300 bg-gray-100">
+                                <td class="px-3 py-2 text-left">
+                                    <span>{{rank.rank}}</span>
+                                </td>
+                                <td class="px-3 py-2 text-left">
+                                    <span>{{rank.name}}</span>
+                                </td>
+                                <td class="px-3 py-2">
+                                    <span>{{rank.mark}}</span>
+                                </td>
+                            </tr>
+                            <!-- <tr class="text-right border-b border-opacity-20 border-gray-300 bg-gray-100">
+                                <td class="px-3 py-2 text-left">
+                                    <span>2</span>
+                                </td>
+                                <td class="px-3 py-2 text-left">
+                                    <span>CHI</span>
+                                </td>
+                                <td class="px-3 py-2">
+                                    <span>30</span>
+                                </td>
+                            </tr>
+                            <tr class="text-right border-b border-opacity-20 border-gray-300 bg-gray-100">
+                                <td class="px-3 py-2 text-left">
+                                    <span>3</span>
+                                </td>
+                                <td class="px-3 py-2 text-left">
+                                    <span>CLE</span>
+                                </td>
+                                <td class="px-3 py-2">
+                                    <span>30</span>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

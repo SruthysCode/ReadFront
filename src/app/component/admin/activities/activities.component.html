@@ -1,0 +1,57 @@
+<section class="py-6 bg-gray-100 text-gray-800">
+    <div class="container p-4 mx-auto space-y-16 sm:p-10">
+        <div class="space-y-4">
+            <h3 class="text-2xl font-bold leading sm:text-5xl">Activities</h3>
+        </div>
+        <div class="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
+            <div class="flex space-x-6" *ngFor="let blog of paginatedBlog">
+                <img alt="" class="flex-1 flex-shrink-0 object-cover  h-56 mb-4 bg-center rounded-sm bg-gray-500"
+                    [src]="blog.activity_link">
+
+                <div class="flex flex-col">
+                    <h4 class="text-xl font-semibold">{{blog.studentname}}</h4>
+                    <p class="text-sm text-gray-600"> {{blog.todoname}} </p>
+
+                    <div>
+                        <div *ngIf="blog.blocked; else unblockSection">
+                            <button class="text-sm text-violet-600" (click)="unblock(blog, blog._id)">
+                                Unblock
+                            </button>
+                        </div>
+                        <ng-template #unblockSection>
+                            <button class="text-sm text-violet-600" (click)="block(blog, blog._id)">
+                                Block
+                            </button>
+                        </ng-template>
+                    </div>
+                    <div class="flex mt-2 space-x-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+    <div class="items-center space-y-2 text-xs sm:space-y-0 sm:space-x-3 sm:flex">
+        <span class="block">Page {{currentPage}} of {{totalPages}}</span>
+        <div class="space-x-1">
+            <button title="previous" type="button"
+                class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow"
+                (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" class="w-4">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button title="next" type="button"
+                class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow"
+                (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" class="w-4">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>

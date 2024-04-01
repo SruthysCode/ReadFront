@@ -1,0 +1,40 @@
+<div>
+
+  <!-- Form-->
+  <div class="form">
+    <div class="form-toggle"></div>
+    <div class="form-panel one">
+      <div class="form-header">
+        <h1>Account Login</h1>
+      </div>
+      <div class="form-content">
+        <form [formGroup]="form" (submit)="onSubmit()" class="form-signin col-4">
+          <div class="form-group">
+            <div *ngIf="isSubmitted && form.get('email')?.errors">
+              <div *ngIf="form.get('email')?.hasError('required')" style="color: red;">Email is required</div>
+              <div *ngIf="form.get('email')?.hasError('email')" style="color: red;">Invalid email format</div>
+            </div>
+
+            <label for="email">Email</label>
+            <input formControlName="email" id="email" type="text" name="email" required="required" />
+          </div>
+
+          <div class="form-group">
+            <div *ngIf="isSubmitted && form.get('password')?.errors">
+              <div *ngIf="form.get('password')?.hasError('required')" style="color: red;">Password is required</div>
+            </div>
+            <label for="password">Password</label>
+            <input formControlName="password" id="password" type="password" name="password" required="required" />
+          </div>
+          <div class="form-group">
+            <label class="form-remember">
+              <!-- <input type="checkbox"/>Remember Me -->
+            </label><a class="form-recovery" href="#">Forgot Password?</a>
+          </div>
+          <div class="form-group">
+            <button type="submit">Log In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

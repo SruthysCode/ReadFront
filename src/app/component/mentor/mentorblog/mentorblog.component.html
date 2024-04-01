@@ -1,0 +1,98 @@
+<div>
+    <section class="py-6 sm:py-12 bg-gray-100 text-gray-800">
+        <div class="container p-6 mx-auto space-y-8">
+            <div class="space-y-2 text-center">
+                <h2 class="text-3xl font-bold">Activities Submittted</h2>
+                <p class="font-serif text-sm text-gray-600"></p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+                <ng-container *ngFor="let blog of getPaginatedBlog()">
+                    <div *ngIf="!blog.blocked">
+                        <article class="flex flex-col bg-gray-50" *ngIf="!blog.blocked">
+                            <a onclick="toggleImageSize()">
+                                <img id="activityImage" alt="" class="object-cover w-full h-60 bg-gray-500"
+                                    src="{{blog.activity_link}}">
+                            </a>
+                            <!-- <div id="largerImage"
+                            class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-75 flex justify-center items-center">
+                            <img id="largerImageView" alt="" class="object-contain max-w-full max-h-full"
+                                src="{{blog.activity_link}}">
+                        </div> -->
+
+                            <!-- <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
+                            <img alt="" class="object-cover w-full h-60 bg-gray-500" src="{{blog.activity_link}}">
+                        </a> -->
+                            <div class="flex flex-col flex-1 p-6">
+                                <a rel="noopener noreferrer" href="#"
+                                    aria-label="Te nulla oportere reprimique his dolorum"></a>
+                                <a rel="noopener noreferrer" href="#"
+                                    class="text-xs tracki uppercase hover:underline text-violet-600">{{blog.studentname}}</a>
+                                <h3 class="flex-1 py-2 text-lg font-semibold leadi">{{blog.todoname}}</h3>
+                                <h3 class="flex-1 py-2 text-lg font-semibold leadi">{{blog.booktitle}}</h3>
+
+                                <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-600">
+                                    <span></span>
+                                    <span>{{ blog.submitted_date | date: 'd MMMM, yyyy' : 'UTC' }}</span>
+                                </div>
+
+                                
+                                <div class="flex justify-between items-start">
+                                    <!-- Like Button -->
+
+
+                                    <button (click)="likeBlog(blog)" class="text-xs">Like {{ blog.likes }}
+
+                                    </button>
+                                </div>
+                                <!-- Comments -->
+
+                                <input [(ngModel)]="newcomment" class="p-2 border border-gray-300">
+                                <div class="flex flex-col items-end">
+                                    <button (click)="sendMessage(blog)" class="text-xs mt-2">Comment</button>
+                                </div>
+
+
+                                <!-- <ng-container *ngFor="let comment of blog.comments">
+                                     {{comment.comment}} - {{comment.name}}  
+                                </ng-container> -->
+
+                                <!-- Comments Display in a Scrollable Textarea -->
+
+                                <div class="gray-box">
+                                    <div class="comment" *ngFor="let comment of blog.comments">{{ comment.comment }} - {{
+                                        comment.name }}</div>
+                                </div>
+
+                            </div>
+                        </article>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </section>
+
+
+    <div>
+        <div class="items-center space-y-2 text-xs sm:space-y-0 sm:space-x-3 sm:flex">
+            <span class="block">Page {{ currentPage }} of {{ getTotalPages() }}</span>
+            <div class="space-x-1">
+                <button title="previous" type="button"
+                    class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow"
+                    (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round" class="w-4">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button title="next" type="button"
+                    class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow"
+                    (click)="goToPage(currentPage + 1)" [disabled]="currentPage === getTotalPages()">
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round" class="w-4">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>

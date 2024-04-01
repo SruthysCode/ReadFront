@@ -1,0 +1,45 @@
+<div class="mt-10">
+
+    <!-- {{Books[0].title}}
+    {{Books[0].link}} -->
+
+
+    <!-- <ul>
+        <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book10.jpg" alt=""></li>
+        <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book02.jpg" alt=""></li>
+        <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book03.jpg" alt=""></li>
+        <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book04.jpg" alt=""></li>
+    </ul> -->
+
+</div>
+<!-- {{book.author}}
+    {{book.title}}
+    {{book.link}}
+    {{book.startDate}} -->
+<!--  
+<div *ngFor="let book of Books">
+    <pdf-viewer [src]='book.link'
+              [render-text]="true"
+              [original-size]="false"
+              style="width: 400px; height: 500px"              
+              
+              ></pdf-viewer>
+
+            
+    <img src="{{book.link}}" alt="">
+</div> -->
+
+<div class="grid grid-cols-3 gap-2 m-20">
+
+    <div class="flex flex-wrap" *ngFor="let book of Books">
+        <div class="w-1/2 p-2">
+            <pdf-viewer [src]="book.link" [render-text]="true" [original-size]="false"
+                style="width: 100%; height: 250px">
+            </pdf-viewer>
+            <a class="block mt-2 bg-violet-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                [href]="book.link" download="downloaded.pdf">
+                Download
+            </a>
+        </div>
+    </div>
+</div>

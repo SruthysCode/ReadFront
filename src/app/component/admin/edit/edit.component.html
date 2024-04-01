@@ -1,0 +1,68 @@
+<div className="min-h-screen flex flex-row " style="display :flex">
+  <div style="flex: '0 0 25%'">
+    <app-sidebar></app-sidebar>
+
+  </div>
+  <div className=" " style="flex: 1">
+    <!--  -->
+
+    <div>
+      <div class="fixed inset-0 z-50 flex items-center justify-center">
+        <div class="fixed inset-0 bg-black opacity-50"></div>
+        <div class="bg-white p-8 rounded-lg z-10 max-w-3xl w-full">
+          <h3 class="text-lg font-medium mb-4">Edit Personal Details</h3>
+          <!-- <p>{{data.name}},.{{ data.email}}<>{{data.address}}>>>{{data.avatar}}</p> -->
+          <!-- Add your form fields for editing here -->
+          <form [formGroup]="form" (submit)="onSubmit()">
+            <div class="mb-4">
+              <input formControlName="id" type="text" id="id" name="id" [value]="data.id"
+                class="hidden mt-1 p-2 border rounded w-full">
+
+              <label for="editName" class="block text-sm font-medium text-gray-600">Name</label>
+              <input formControlName="name" type="text" id="editName" name="editName" [value]="data.name"
+                class="mt-1 p-2 border rounded w-full">
+            </div>
+            <div class="mb-4">
+              <label for="editaddress" class="block text-sm font-medium text-gray-600"> Address</label>
+              <input formControlName="address" type="text" id="editaddress" name="editaddress" [value]="data.address"
+                class="mt-1 p-2 border rounded w-full">
+            </div>
+            <div class="mb-4">
+              <label for="editemail" class="block text-sm font-medium text-gray-600">Email </label>
+              <input formControlName="email" type="text" id="editemail" name="editemail" [value]="data.email"
+                class="readonly mt-1 p-2 border rounded w-full">
+            </div>
+            <div class="mb-4">
+              <label for="editmobile" class="block text-sm font-medium text-gray-600"> Mobile</label>
+              <input formControlName="mobile" type="text" id="editmobile" name="editmobile" [value]="data.mobile"
+                class="mt-1 p-2 border rounded w-full">
+            </div>
+            <div class="mb-4">
+              <!-- <label for="editavatar" class="block text-sm font-medium text-gray-600"> Avatar</label>
+                <input formControlName="avatar" type="text" id="editavatar" name="editavatar" [value]="data.avatar"
+                  class="mt-1 p-2 border rounded w-full hidden"> -->
+
+              <!-- <div class="image-container ">
+                  <img src="{{data.avatar}}" alt="Profile Image" width="100px" height="100px">
+                </div>
+                <div class="file-upload-container">
+                  <input type="file" name="image" (change)="onFileSelected($event)">
+                </div> -->
+              <!-- <input formControlName="role" type="text" id="role" name="role" [value]="data.role"> -->
+
+            </div>
+
+            <!-- Add other form fields as needed -->
+            <div class="flex justify-center">
+              <button type="submit" class="px-8 py-3 font-semibold rounded-full bg-violet-800 text-gray-100">Save
+                Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
+
+  </div>
+</div>

@@ -1,0 +1,23 @@
+/* .hidden {
+  display: none;
+}
+
+#largerImage {
+  z-index: 9999;
+} */
+
+.gray-box {
+  white-space: pre-wrap;
+}
+
+.comment {
+  padding: 5px;
+}
+
+.comment:nth-child(even) {
+  background-color: #f5f5f5; 
+}
+
+.comment:nth-child(odd) {
+  background-color: #ffffff; 
+}

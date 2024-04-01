@@ -1,0 +1,6 @@
+.active {
+  background-color: #f7fafc; /* Light gray background */
+  border-color: #e2e8f0; /* Light gray border */
+  font-weight: bold; /* Bold text */
+  color: #620375; /* Dark text color */
+}

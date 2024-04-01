@@ -1,0 +1,48 @@
+<p>signup works!</p>
+{{role}}
+
+
+<div class="m-10">
+    <section>
+        <!-- component -->
+        <div class="bg-grey-lighter min-h-screen flex-col ">
+
+            <div class="container max-w-sm m-auto  flex-1 flex-col items-center justify-center px-2 py-8">
+                <form [formGroup]="form" (submit)="signup()" class="form-signin" novalidate="" action=""
+                    class="container mx-auto space-y-12 ">
+
+                    <div
+                        class="bg-white px-6 py-8 rounded shadow-m w-full bg-gradient-to-b from-pink-400 to-purple-500 text-black">
+                        <h1 class="mb-8 text-3xl text-center">Sign up</h1>
+                        <input formControlName="name" id="name" type="text"
+                            class="block border border-grey-light w-full p-3 rounded mb-4" name="fullname"
+                            placeholder="Full Name" />
+
+                        <input formControlName="email" id="email" type="text"
+                            class="block border border-grey-light w-full p-3 rounded mb-4" name="email"
+                            placeholder="Email" />
+
+                        <input formControlName="password" id="password" type="password"
+                            class="block border border-grey-light w-full p-3 rounded mb-4" name="password"
+                            placeholder="Password" />
+                        <input formControlName="confirmpassword" id="confirmpassword" type="password"
+                            class="block border border-grey-light w-full p-3 rounded mb-4" name="confirmpassword"
+                            placeholder="Confirm Password" />
+
+                        <button type="submit"
+                            class="w-full text-center py-3 rounded  bg-violet-800 text-white hover:bg-green-dark focus:outline-none my-1">Sign
+                            In</button>
+
+                        <div class="text-center text-sm text-grey-dark mt-4">
+                            Already have an account?
+                            <a class="no-underline border-b border-blue text-blue" href="student/studentlogin">
+                                Log in
+                            </a>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

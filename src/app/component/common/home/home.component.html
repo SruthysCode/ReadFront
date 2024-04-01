@@ -1,0 +1,255 @@
+<!--  -->
+<div class="flex">
+    <div class="w-2/3">
+        <article class="max-w-2xl  py-10 mx-auto space-y-16 bg-white-100 text-gray-900">
+            <div class="w-full mx-auto space-y-4">
+                <h1 class="text-xl font  text-indigo-500">“വായിച്ചാലും വളരും,
+                    വായിച്ചില്ലേലും വളരും. <br>
+                    വായിച്ചു വളര്‍ന്നാല്‍ വിളയും <br>
+                    വായിക്കാതെ വളര്‍ന്നാല്‍ വളയും.” <br>
+                </h1>
+                <h1 class="text-rose-400"> കുഞ്ഞുണ്ണിമാഷ്</h1>
+            </div>
+        </article>
+
+    </div>
+    <div class=" w-1/3 flex flex-col p-5 items-end space-y-4">
+        <button type="button" class="px-8 py-3 font-semibold rounded-full bg-violet-800 text-gray-100"
+            (click)="studentlogin()">Student Login</button>
+        <button type="button" class="px-8 py-3 font-semibold rounded-full bg-violet-800 text-gray-100"
+            (click)="mentorlogin()">Mentor Login</button>
+    </div>
+</div>
+
+<!-- carousel -->
+<div>
+    <div class="relative flex items-center justify-center w-full text-gray-900">
+        <button aria-label="Slide back" type="button"
+            class="absolute left-0 z-30 p-2 ml-10 bg-opacity-50 rounded-full focus:outline-none focus:bg-gray-400 focus:ri focus:ri focus:ri bg-gray-50">
+            <svg width="8" height="14" fill="none" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4">
+                <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+        </button>
+        <div class="
+        flex items-center justify-start w-full h-full gap-6 py-4 mx-auto overflow-auto lg:gap-8">
+            <!-- <div class="relative flex flex-shrink-0 w-full sm:w-auto">
+                <img class="object-cover object-center bg-gray-500 h-96 aspect-square" src="./img/quote1.jpeg" alt="Image 1">
+            </div>
+            <div class="relative flex flex-shrink-0 w-full sm:w-auto">
+                <img class="object-cover object-center bg-gray-500 h-96 aspect-square" src="./img/quote2.jpeg" alt="Image 2">
+            </div>
+            <div class="relative flex flex-shrink-0 w-full sm:w-auto">
+                <img class="object-cover object-center bg-gray-500 h-96 aspect-square" src="./img/quote3.jpeg" alt="Image 4">
+            </div> -->
+            <div class="relative w-full">
+                <img class="w-full bg-gray-500 h-96" src="../../../assets/img/bookstackssmall.jpg" alt="Image 5">
+            </div>
+        </div>
+        <!-- aspect-square -->
+
+        <!-- <h1>Not sure what to read next? Explore our catalog of public domain books with our editors. Some real gems are hidden in our library. </h1> -->
+        <button aria-label="Slide forward" id="next"
+            class="absolute right-0 z-30 p-2 mr-10 bg-opacity-50 rounded-full focus:outline-none focus:bg-gray-400 focus:ri focus:ri focus:ri bg-gray-50">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4">
+                <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+        </button>
+    </div>
+
+</div>
+<!-- current score card -->
+<div>
+    <div class="p-6 mt-5 py-12 bg-rose-300 text-gray-50">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <h2 class="text-center text-4xl tracki font-bold">New
+                    <br class="sm:hidden">Score Card Available
+                </h2>
+                <!-- <div class="space-x-2 text-center py-2 lg:py-0">
+                <span>Plus free shipping! Use code:</span>
+                <span class="font-bold text-lg">MAMBA</span>
+            </div> -->
+                <a href="#" rel="noreferrer noopener"
+                    class="px-5 mt-4 lg:mt-0 py-3 rounded-full border block bg-violet-900 text-gray-50 border-gray-600">View</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- list of books provided -->
+<div>
+    <section class="py-6 sm:py-12 bg-gray-100 text-gray-800">
+        <div class="container p-6 mx-auto space-y-8">
+            <div class="space-y-2 text-center">
+                <h2 class="text-3xl font-bold">Books Shared</h2>
+                <p class="font-serif text-sm text-gray-600">List of Books shared each month</p>
+            </div>
+            <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+                <article class="flex flex-col bg-gray-50">
+                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"
+                        class="block aspect-w-1 aspect-h-1">
+
+                        <img alt="" class="object-cover w-full h-30 bg-gray-500"
+                            src="../../../assets/img/books imgs/benyamin aadujivitham.jpg">
+                    </a>
+                    <div class="flex flex-col flex-1 p-6">
+                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
+                        <a rel="noopener noreferrer" href="#"
+                            class="text-xs tracki uppercase hover:underline text-lime-600">Convenire</a>
+                        <h3 class="flex-1 py-2 text-lg font-semibold leadi">Te nulla oportere reprimique his dolorum
+                        </h3>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-600">
+                            <span>June, 2023</span>
+                            <span>2.1K views</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="flex flex-col bg-gray-50">
+                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"
+                        class="block aspect-w-1 aspect-h-1">
+                        <img alt="" class="object-cover w-full h-30 bg-gray-500"
+                            src="../../../assets/img/books imgs/lewis carroll-alice wonderland.webp">
+                    </a>
+                    <div class="flex flex-col flex-1 p-6">
+                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
+                        <a rel="noopener noreferrer" href="#"
+                            class="text-xs tracki uppercase hover:underline text-lime-600">Convenire</a>
+                        <h3 class="flex-1 py-2 text-lg font-semibold leadi">Te nulla oportere reprimique his dolorum
+                        </h3>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-600">
+                            <span>July, 2023</span>
+                            <span>2.2K views</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="flex flex-col bg-gray-50">
+                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"
+                        class="block aspect-w-1 aspect-h-1">
+                        <img alt="" class="object-cover w-full h-30 bg-gray-500"
+                            src="../../../assets/img/books imgs/mt ninte ormakku.jpg">
+                    </a>
+                    <div class="flex flex-col flex-1 p-6">
+                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
+                        <a rel="noopener noreferrer" href="#"
+                            class="text-xs tracki uppercase hover:underline text-lime-600">Convenire</a>
+                        <h3 class="flex-1 py-2 text-lg font-semibold leadi">Te nulla oportere reprimique his dolorum
+                        </h3>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-600">
+                            <span>August, 2023</span>
+                            <span>2.3K views</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="flex flex-col bg-gray-50">
+                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"
+                        class="block aspect-w-1 aspect-h-1">
+                        <img alt="" class="object-cover w-full h-30  bg-gray-500"
+                            src="../../../assets/img/books imgs/sudha moorthy- grandmas story.webp">
+                    </a>
+                    <div class="flex flex-col flex-1 p-6">
+                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
+                        <a rel="noopener noreferrer" href="#"
+                            class="text-xs tracki uppercase hover:underline text-lime-600">Convenire</a>
+                        <h3 class="flex-1 py-2 text-lg font-semibold leadi">Te nulla oportere reprimique his dolorum
+                        </h3>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-600">
+                            <span>September, 2023</span>
+                            <span>2.4K views</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!--top readers of this month  -->
+
+<div>
+    <section class="py-6 sm:py-12 bg-gray-100 text-gray-800">
+        <div class="container p-6 mx-auto space-y-8">
+            <div class="space-y-2 text-center">
+                <h2 class="text-3xl font-bold">Toppers</h2>
+                <p class="font-serif text-sm text-gray-600">Last Months Top Readers</p>
+            </div>
+            <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+                <article class="flex flex-col bg-gray-50">
+                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
+                        <img alt="" class="object-cover w-full h-52 bg-gray-500"
+                            src="../../../assets/img/students/img1.jpeg">
+                    </a>
+                    <div class="flex flex-col flex-1 p-6">
+                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
+                        <a rel="noopener noreferrer" href="#"
+                            class="text-xs tracki uppercase hover:underline text-lime-600">ANNA</a>
+                        <h3 class="flex-1 py-2 text-lg font-semibold leadi">Te nulla oportere reprimique his dolorum
+                        </h3>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-600">
+                            <span>June, 2023</span>
+                            <span>2.1K views</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="flex flex-col bg-gray-50">
+                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
+                        <img alt="" class="object-cover w-full h-52 bg-gray-500"
+                            src="../../../assets/img/students/img2.jpeg">
+
+                    </a>
+                    <div class="flex flex-col flex-1 p-6">
+                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
+                        <a rel="noopener noreferrer" href="#"
+                            class="text-xs tracki uppercase hover:underline text-lime-600">RANA</a>
+                        <h3 class="flex-1 py-2 text-lg font-semibold leadi">Te nulla oportere reprimique his dolorum
+                        </h3>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-600">
+                            <span>June, 2023</span>
+                            <span>2.2K views</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="flex flex-col bg-gray-50">
+                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
+                        <img alt="" class="object-cover w-full h-52 bg-gray-500"
+                            src="../../../assets/img/students/img3.jpeg">
+                    </a>
+                    <div class="flex flex-col flex-1 p-6">
+                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
+                        <a rel="noopener noreferrer" href="#"
+                            class="text-xs tracki uppercase hover:underline text-lime-600">VINJENSA</a>
+                        <h3 class="flex-1 py-2 text-lg font-semibold leadi">Te nulla oportere reprimique his dolorum
+                        </h3>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-600">
+                            <span>June, 2023</span>
+                            <span>2.3K views</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="flex flex-col bg-gray-50">
+                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
+                        <img alt="" class="object-cover w-full h-52 bg-gray-500"
+                            src="../../../assets/img/students/img4.jpg">
+                    </a>
+                    <div class="flex flex-col flex-1 p-6">
+                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
+                        <a rel="noopener noreferrer" href="#"
+                            class="text-xs tracki uppercase hover:underline text-lime-600">ARUL</a>
+                        <h3 class="flex-1 py-2 text-lg font-semibold leadi">Te nulla oportere reprimique his dolorum
+                        </h3>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-600">
+                            <span>June, 2023</span>
+                            <span>2.4K views</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</div>
+
+<app-books></app-books>

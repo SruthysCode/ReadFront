@@ -1,0 +1,50 @@
+<div *ngIf="msgview"
+  class="flex items-center justify-between m-20 w-1/3 p-6 border-l-8 sm:py-8 border-violet-600 bg-gray-50 text-gray-800">
+  <!-- <span>Book uploaded Successfully!!</span> -->
+  <span>Activity for the week is Posted!!</span>
+</div>
+
+
+<div class="m-5" *ngIf="!msgview">
+
+  <div class="file-upload-container m-5">
+    <input type="file" name="book" id="file" class="hidden" (change)="onFileSelected($event)">
+    <label for="file" class="px-8 py-3 font-semibold rounded-full bg-violet-800 text-gray-100 cursor-pointer">Select
+      Activity </label>
+  </div>
+  <div *ngIf="formVisible">
+    <form [formGroup]="form" (submit)="onSubmit()">
+
+      <div class="m-10 flex">
+        <div class="image-container ">
+          <img [src]="Imgsrc" id="tempimage" alt="" width="300px" height="600px" class="bg-white">
+        </div>
+        <div class="flex flex-col m-20">
+          <label for="activity" class="block text-sm font-medium text-gray-600">Enter Activity</label>
+          <input formControlName="name" type="text" placeholder="Enter Activity Name"
+            class="mt-1 p-2 border rounded w-full">
+          <label for="activity" class="block text-sm font-medium text-gray-600">Activity start Date </label>
+          <input formControlName="startDate" type="text" class="mt-1 p-2 border rounded w-full">
+          <label for="activity" class="block text-sm font-medium text-gray-600">Activity End Date</label>
+          <input formControlName="endDate" type="text" class="mt-1 p-2 border rounded w-full">
+
+          <input formControlName="startDateis" type="text" class="mt-1 p-2 border rounded" hidden>
+          <input formControlName="endDateis" type="text" class="mt-1 p-2 border rounded" hidden>
+
+          <label for="activity" class="block text-sm font-medium text-gray-600">Reference Book For Activity</label>
+          <input formControlName="bookTitle" type="text" class="mt-1 p-2 border rounded w-full">
+
+          <input formControlName="book" type="text" class="mt-1 p-2 border rounded w-full" hidden>
+
+          <div class="activity-upload-container m-5">
+            <button type="submit" class="px-8 py-3 font-semibold rounded-full bg-violet-800 text-gray-100">Upload
+              Activity
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

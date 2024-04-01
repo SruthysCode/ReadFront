@@ -1,0 +1,65 @@
+<p>studentvideo</p>
+
+<div class="flex"> 
+    <div *ngIf="role === 'mentor'" class="w-2/3">
+       <div *ngIf="remoteSocketId; else nostudent">
+          <p class="text-success">student Online</p>
+       </div>
+       <ng-template  #nostudent>
+          <p class="text-danger">No one in the room</p>
+       </ng-template>
+    </div>
+    <div *ngIf="role === 'student'" class="w-2/3">
+       <div *ngIf="remoteSocketId; else noMentor">
+          <p class="text-success">Mentor Online</p>
+       </div>
+       <ng-template #noMentor>
+          <p class="text-danger" >No one in the room</p>
+       </ng-template>
+    </div>
+    <div class="text-center" style="width: calc(100% - 28rem);">
+       <span class="font-weight-bold text-lg font-poppins d-flex align-items-center"><i class="fa-solid fa-hourglass-end"></i><p style="margin: 0;">{{counter}}</p></span>
+    </div>
+ </div>
+ <div class="container-fluid">
+    <div class="row">
+       <div class="col">
+          <p class="video_description px-3 py-2">Local</p>
+          <video class="h-460 bg-gray-400" #local_video [autoplay]="true" [muted]="false"></video>
+       </div>
+       <div class="col">
+          <p class="video_description px-3 py-2">Remote</p>
+          <video class="h-460 bg-gray-400" #received_video [autoplay]="true"></video>
+       </div>
+    </div>
+    <div class="row mt-3 justify-content-center">
+       <!-- Camera Off -->
+       <div *ngIf="!videoCamera" (click)="startLocalVideo()" class="w-14 h-14 border border-solid border-dark rounded-circle cursor-pointer d-flex align-items-center justify-content-center bg-light">
+          <span  class="text-dark"><i class="fa-solid fa-video-slash">Cam Off</i></span>
+       </div>
+ 
+       <!-- Camera On -->
+       <div *ngIf="videoCamera" (click)="pauseLocalVideo()" class="w-14 h-14 border border-solid border-dark rounded-circle cursor-pointer d-flex align-items-center justify-content-center bg-light">
+          <span  class="text-dark"><i class="fa-solid fa-video">Cam On</i></span>
+       </div>
+ 
+       <!-- Calling student -->
+       <!-- <div  (click)="handleCallstudent()" *ngIf="remoteSocketId && role === 'mentor'" class="w-14 h-14 border border-solid border-success rounded-circle cursor-pointer d-flex align-items-center justify-content-center">
+          <span  class="text-success"><i class="fa-solid fa-phone">Call</i></span>
+       </div>
+  -->
+       <!-- Start button in student -->
+       <div  (click)="answerCall()" *ngIf="remoteSocketId && role === 'student' && mentorCallStarted" class="w-14 h-14 border border-solid border-success rounded-circle cursor-pointer d-flex align-items-center justify-content-center">
+          <span  class="text-success"><i class="fa-solid fa-s">
+
+            Start
+          </i></span> 
+       </div>
+ 
+       <!-- Hang Up the Call -->
+       <div  (click)="disconnectCall()" *ngIf="callAccepted" class="w-14 h-14 border border-solid border-danger rounded-circle cursor-pointer d-flex align-items-center justify-content-center">
+          <span  class="text-danger"><i class="fa-solid fa-xmark">Hang up</i></span>
+       </div>
+    </div>
+ </div>
+ 

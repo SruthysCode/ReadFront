@@ -1,0 +1,33 @@
+<p>otp works!</p>
+
+<div class="flex justify-center items-center h-[32rem]">
+    <div class="flex flex-col w-full max-w-md p-12 space-y-4 text-center bg-gray-200 text-gray-800">
+        <h1 class="text-3xl font-semibold">OTP </h1>
+        <div *ngIf="timer > 0">
+            <p> OTP valid for {{ timer }} seconds</p>
+        </div>
+        <div *ngIf="timer <= 0">
+            <p>Please verify your OTP</p>
+        </div>
+        
+        <form [formGroup]="form" (submit)="verifyotp()" novalidate="" class="space-y-4">
+            <div class="flex flex-col">
+                <label for="otp" class="sr-only">Enter OTP </label>
+                <input formControlName="otp" id="otp" type="otp" placeholder="Enter Otp "
+                    class="rounded-t-md border-gray-900 bg-white-900 text-gray-800 focus:ri focus:border-violet-600 focus:ri">
+            </div>
+
+            <!-- *********** -->
+            <div *ngIf="showResendButton">
+                <button type="button" (click)="resendOTP()"
+                    class="px-8 py-3 space-x-2 font-semibold rounded bg-violet-600 text-gray-50">Resend OTP</button>
+                    <p>You have {{ resendCount }}/3 attempts left.</p>
+            </div>
+            <!-- ********** -->
+            <div *ngIf="showVerifyButton">
+            <button type="submit"
+                class="px-8 py-3 space-x-2 font-semibold rounded bg-violet-600 text-gray-50">Verify</button>
+            </div>
+        </form>
+    </div>
+</div>

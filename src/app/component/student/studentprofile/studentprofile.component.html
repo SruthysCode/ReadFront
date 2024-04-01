@@ -1,0 +1,130 @@
+<div className="min-h-screen flex flex-row m-20px " style="display :flex">
+    <!-- <div style="flex: '0 0 25%'">
+        <app-studentsidebar>
+            [studentName]="studentName"
+            [studentImage]="studentImage"
+        </app-studentsidebar>
+    </div> -->
+    <div className="profile"
+        style="flex: 1 ; display: flex; justify-content: center; align-items: center; margin: 45px;">
+        <div>
+
+            <div class="bg-white max-w-2xl shadow overflow-hidden sm:rounded-lg">
+                <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        Student Details
+                    </h3>
+                    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                        Details and informations about student.
+                    </p>
+                </div>
+                <div class="border-t border-gray-200">
+                    <dl>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Name
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ student.name}}
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Address
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ student.address}}
+                            </dd>
+                        </div>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Email address
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ student.email }}
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Mobile Number
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ student.mobile}}
+                            </dd>
+                        </div>
+
+                        <!-- <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                About
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                </dd>
+                        </div> -->
+                    </dl>
+
+                    <div class="flex justify-center m-4">
+                        <button (click)="openEditModal()" type="button"
+                            class="px-3 py-2 font-semibold rounded-full bg-violet-800 text-gray-100">Edit
+                            Details</button>
+                        <button (click)="myDialog.show()" type="button"
+                            class="px-3 py-3 font-semibold rounded-full bg-violet-800 text-gray-100">
+                            Password Change</button>
+
+
+
+                    </div>
+
+                    <app-studenteditprofile [showModal]="isModalOpen" [student]="student" (closeModal)="closeModal()"
+                        (saveChanges)="saveChanges($event)"></app-studenteditprofile>
+
+
+                    <!-- Password dialog starts -->
+                    <dialog #myDialog>
+                        <div>
+                            <div class="fixed inset-0 z-50 flex items-center justify-center">
+                                <div class="fixed inset-0 bg-black opacity-50"></div>
+                                <div class="bg-white p-8 m-10 rounded-lg z-10 max-w-3xl w-1/4">
+                                    <div class="flex justify-end">
+                                        <button (click)="myDialog.close()"
+                                            class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+
+                                    <h3 class="text-lg font-medium mb-4">Password Change</h3>
+                                    <div class="m-10">
+                                        <form [formGroup]="form" (submit)="updatePassword()">
+                                            <div class="mb-4">
+                                                <label for="editName"
+                                                    class="block text-sm font-medium text-gray-600">New
+                                                    Password</label>
+                                                <input formControlName="password" type="password" id="password"
+                                                    name="password" class="mt-6 p-2 border rounded w-full">
+                                            </div>
+                                            <div class="flex justify-center  flex-grow">
+
+                                                <button type="submit"
+                                                    class="px-8 py-3 mt-5 font-semibold rounded-full bg-violet-800 text-gray-100">
+                                                    Change Password</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </dialog>
+                    <!-- Password dialog ends -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
