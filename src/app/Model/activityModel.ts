@@ -24,6 +24,14 @@ export interface Activity {
   bookname: string;
 }
 
+
+export interface ActivityName {
+  
+  todo_id: string;
+  todoname: string;
+
+}
+
 export interface Blog {
   _id: string;
   activity_link: string;

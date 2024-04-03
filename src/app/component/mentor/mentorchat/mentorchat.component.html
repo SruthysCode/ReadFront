@@ -1,35 +1,36 @@
-<p>studentchat works!</p>
 <div>
     <div class=" m-5 pb-20">
-        <div class="flex  h-96 border ">
+        <div class="flex h-96 border ">
             <!-- students list (left side) -->
-            <div class="w-1/4 h-4/5 border-r">
+            <div class="w-1/4 border-r">
                 <h2 class="text-lg font-bold p-4">students</h2>
-                <ul class="overflow-y-auto">
+                <ul class="max-h-1/3 overflow-y-auto">
                     <li *ngFor="let student of students" class="p-4 border-b" (click)="selectStudent(student)">
                         {{ student.name }}
                         <span *ngIf="studentID === student._id" class="text-green-500 ml-2">online</span>
 
                     </li>
                 </ul>
-            </div> 
+            </div>
             <!-- Chat area (right side) -->
             <div class="flex-1 h-4/5">
                 <div class="p-4 border-b flex items-center">
-                    
-                    <img *ngIf="selectedstudents?.avatar" src="{{ selectedstudents.avatar }}" alt="{{ selectedstudents.name }}"
-                        class="w-8 h-8 rounded-full mr-2">
+
+                    <img *ngIf="selectedstudents?.avatar" src="{{ selectedstudents.avatar }}"
+                        alt="{{ selectedstudents.name }}" class="w-8 h-8 rounded-full mr-2">
                     <h2 class="text-lg font-bold">{{ selectedstudents.name }}</h2>
-                </div>         <!-- Chat messages -->
+                </div> <!-- Chat messages -->
                 <div class="flex flex-col space-y-2 h-full overflow-y-auto">
                     <div *ngFor="let message of chatMessages"
-                        [ngClass]="{'justify-start': message.sender!==mentorID, 'justify-end': message.sender==mentorID}" class="flex">
+                        [ngClass]="{'justify-start': message.sender!==mentorID, 'justify-end': message.sender==mentorID}"
+                        class="flex">
                         <div [ngClass]="{'bg-gray-200': message.sender!==mentorID, 'bg-pink-400 text-white': message.sender==mentorID}"
                             class="rounded-lg p-2">
                             <p class="text-md">{{ message.message }}
-                                <span class="text-xs" style="vertical-align: sub;">{{ message.time | date : 'shortTime' }}</span>
+                                <span class="text-xs" style="vertical-align: sub;">{{ message.time | date : 'shortTime'
+                                    }}</span>
                             </p>
-                           </div>
+                        </div>
                     </div>
                 </div>
 

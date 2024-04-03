@@ -12,6 +12,7 @@ import { BookComponent } from './studentactivity/book/book.component';
 import { PostactivityComponent } from './studentactivity/postactivity/postactivity.component';
 import { ActivitiesComponent } from './studentactivity/activities/activities.component';
 import { StudentvideoComponent } from './studentvideo/studentvideo.component';
+import { MarkComponent } from './studentactivity/mark/mark.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,11 @@ const routes: Routes = [
             path: 'activities',
             component: ActivitiesComponent,
             data: { title: 'Activities' },
+          },
+          {
+            path: 'mark',
+            component: MarkComponent,
+            data: { title: 'Mark' },
           },
         ],
       },

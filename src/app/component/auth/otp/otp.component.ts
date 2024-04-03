@@ -102,7 +102,9 @@ export class OtpComponent  implements OnInit{
      
       this.studentauth.OtpVerify(otp_verify).subscribe(
         (res: any) => {
-          this.router.navigate(['student/studentlogin']);// student homepage
+          // this.router.navigate(['student/studentlogin']);// student homepage
+          this.router.navigate(['/auth/login', { role: Role.Student }]);
+ 
         },
         (err: { error: { message: string | undefined } }) => {
           Swal.fire('Error', err.error.message, 'error');
@@ -114,7 +116,9 @@ export class OtpComponent  implements OnInit{
       {
         this.mentorauth.OtpVerify(otp_verify).subscribe(
           (res: any) => {
-            this.router.navigate(['student/studentlogin']);// to mentor homepage
+            // this.router.navigate(['/auth/login;role=mentor']);// to mentor homepage
+            this.router.navigate(['/auth/login', { role: Role.Mentor }]);
+ 
           },
           (err: { error: { message: string | undefined } }) => {
             Swal.fire('Error', err.error.message, 'error');

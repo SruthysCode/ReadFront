@@ -90,7 +90,9 @@ export class SignupComponent implements OnInit{
          {
         this.mentorauth.SignUp(signupDetails).subscribe(
           (res: any) => {
-            localStorage.setItem('mail', res.student_mail);
+            console.log("mentor mail" , res);
+            
+            localStorage.setItem('mail', res.mentor_mail);
             Swal.fire({
               icon: 'success',
               title: 'OTP Generated!',

@@ -34,6 +34,7 @@ export class MentorAuthService {
   }
 
   Otp(signup_detail: any) {
+    
     return this.http.post(this.APIBaseUrl + 'otp', { signup_detail });
   }
 

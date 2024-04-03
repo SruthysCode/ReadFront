@@ -49,4 +49,12 @@ export class StudentactivityService {
   GetBooks(): Observable<any> {
     return this.http.get(this.APIBaseUrl + `getbooks`);
   }
+
+  getAllActivity(): Observable<any> {
+    return this.http.get(this.APIBaseUrl + `getallactivity`);
+  }
+
+  GetRank(todoID: string): Observable<any> {
+    return this.http.get(this.APIBaseUrl + `getrank/${todoID}`);
+  }
 }
